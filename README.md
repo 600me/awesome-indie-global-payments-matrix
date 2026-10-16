@@ -168,6 +168,11 @@ Verified on **2026-10-16** against public endpoints and the VPS:
 - All nine prior relay routes remain intact, including Smartproxy **301**, RunPod **302** and Vast.ai's existing referral identifier. Nginx backup: `/etc/nginx/sites-available/kais-proxy-links.bak.20261016T152100Z`.
 - Proxy, GPU and Payments pages each link to both sister sites; the three public HTTPS bodies match their local files. All three README footers link to the three sites and repositories. GPU refresh templates preserve these links.
 
+
+- Public repository created at `600me/awesome-indie-global-payments-matrix`; `main` was pushed using its own writable `payments-matrix-deploy` key. Local `core.sshCommand` selects `~/.ssh/id_ed25519_payments_matrix` with `-F /dev/null`. No private key is stored in this repository.
+- All three GitHub repository pages return **200**; anonymous raw README downloads matched local files and contained the full site/repository matrix.
+- Live HTTPS calculator smoke check at `$8,000 MRR / $40 AOV` displayed **$1,496 annual savings**; no JavaScript errors or page overflow at 375px. Temporary browser tabs were closed after verification.
+
 Deployment checks establish publication and routing, not customer traffic, conversions or revenue. Certificate renewal is configured; a future natural renewal has not yet been observed.
 
 ## Sister Projects (Matrix Interlinks)
