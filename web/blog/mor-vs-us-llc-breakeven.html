@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The 5% MoR Illusion: Exact US LLC + Stripe Breakeven for Non-US SaaS Founders (2026)</title>
+<meta name="description" content="Exact break-even math for non-US SaaS founders choosing between a 5% Merchant of Record and a US LLC plus Stripe: $3,205, $5,376 and $15,152 MRR across three real card mixes, with the full compliance bill.">
+<link rel="canonical" href="https://pay.mybskm.top/blog/mor-vs-us-llc-breakeven.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="600me">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Global Payments Matrix">
+<meta property="og:title" content="The 5% MoR Illusion: Exact US LLC + Stripe Breakeven for Non-US SaaS Founders (2026)">
+<meta property="og:description" content="The flat 5% headline hides a moving break-even. Exact algebra, three card-mix tiers and the real US LLC compliance bill for foreign founders.">
+<meta property="og:url" content="https://pay.mybskm.top/blog/mor-vs-us-llc-breakeven.html">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-10-19T06:00:00Z">
+<meta property="article:modified_time" content="2026-10-19T06:00:00Z">
+<meta property="article:author" content="600me">
+<meta property="article:section" content="Payment Economics">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The 5% MoR Illusion: Exact US LLC + Stripe Breakeven">
+<meta name="twitter:description" content="$3,205, $5,376 or $15,152 MRR? The break-even depends on your international card share and settlement currency. Here is the algebra.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The 5% MoR Illusion: Exact US LLC + Stripe Breakeven for Non-US SaaS Founders (2026)",
+  "description": "Exact break-even math for non-US SaaS founders choosing between a 5% Merchant of Record and a US LLC plus Stripe: $3,205, $5,376 and $15,152 MRR across three real card mixes, with the full compliance bill.",
+  "author": {
+    "@type": "Person",
+    "name": "600me",
+    "url": "https://pay.mybskm.top/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Global Payments Matrix",
+    "url": "https://pay.mybskm.top/"
+  },
+  "datePublished": "2026-10-19T06:00:00Z",
+  "dateModified": "2026-10-19T06:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://pay.mybskm.top/blog/mor-vs-us-llc-breakeven.html"
+  },
+  "url": "https://pay.mybskm.top/blog/mor-vs-us-llc-breakeven.html",
+  "articleSection": "Payment Economics",
+  "keywords": "merchant of record, stripe, us llc, break-even, saas, international cards, fx",
+  "inLanguage": "en",
+  "isAccessibleForFree": true
+}
+</script>
+<style>
+:root{color-scheme:dark;--bg:#090c12;--panel:#111722;--line:#263142;--ink:#e9eff9;--body:#ccd8e8;--muted:#a0afc2;--green:#88f5bd;--blue:#9bbdff;--amber:#e1c991}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 78% -6%,#12353188,transparent 44%),var(--bg);color:var(--ink);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}a:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:16px;z-index:20;background:var(--panel);padding:10px 14px;border-radius:8px}
+.shell{max-width:960px;margin:0 auto;padding:0 26px}
+header.site{border-bottom:1px solid var(--line);background:#090c12e6;position:sticky;top:0;backdrop-filter:blur(8px);z-index:5}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px;max-width:1100px}
+.brand{font:700 15px ui-monospace,monospace;color:var(--ink);white-space:nowrap}.brand b{color:var(--green)}
+header nav,footer nav{display:flex;gap:20px;flex-wrap:wrap}
+header nav a{font-size:12.5px;color:var(--muted)}header nav a:hover{color:var(--green)}
+.backlink{margin:22px 0 0;font:12.5px ui-monospace,monospace}.backlink a{color:var(--muted)}.backlink a:hover{color:var(--green)}
+main{padding:26px 0 70px}
+.eyebrow{font:11.5px ui-monospace,monospace;color:var(--green);letter-spacing:1.8px;text-transform:uppercase;margin:12px 0 0}
+h1{font-size:clamp(30px,4.6vw,52px);line-height:1.12;letter-spacing:-1.6px;margin:18px 0;max-width:900px}
+.standfirst{font-size:18px;color:var(--muted);max-width:800px;margin:0 0 18px}
+.meta{display:flex;gap:18px;flex-wrap:wrap;font:12px ui-monospace,monospace;color:var(--muted);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;margin:0 0 26px}
+.meta strong{color:var(--ink)}
+.ftc{border:1px solid #796239;background:#dba6430d;color:var(--amber);border-radius:10px;padding:16px 18px;font-size:13.5px;line-height:1.62;margin:0 0 30px}
+.ftc strong{color:#f0d9a3}
+.content{max-width:840px}
+.content h2{font-size:24px;letter-spacing:-.5px;margin:46px 0 12px}
+.content h3{font-size:18px;letter-spacing:-.3px;margin:30px 0 8px}
+.content p{margin:0 0 18px;color:var(--body)}
+.content strong{color:#fff}
+.content ul,.content ol{margin:0 0 20px;padding-left:22px;color:var(--body)}
+.content li{margin:0 0 8px}.content li::marker{color:var(--green)}
+.content code{font:13px ui-monospace,SFMono-Regular,monospace;background:#182231;border:1px solid #2a3648;border-radius:5px;padding:1.5px 6px;color:#b9f7d9;overflow-wrap:anywhere}
+.content pre{background:#070b11;border:1px solid var(--line);border-radius:10px;padding:16px 18px;overflow:auto;margin:0 0 22px;line-height:1.6}
+.content pre code{background:none;border:0;padding:0;font-size:12.8px;color:#c7f5df;white-space:pre}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;margin:0 0 22px;background:#0c121b}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:640px}
+th{font:600 11px ui-monospace,monospace;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);background:#101826;text-align:left}
+th,td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}tbody tr:hover{background:#131c29}
+td.num{font-family:ui-monospace,monospace;color:var(--green);white-space:nowrap}
+.callout{border-left:3px solid var(--green);background:#0e1a1a;border-radius:0 10px 10px 0;padding:14px 18px;margin:0 0 24px;color:var(--body);font-size:14.5px}
+.callout strong{color:var(--green)}
+.cta-panel{max-width:840px;border:1px solid #2b5e50;background:linear-gradient(100deg,#102a26,#122030);border-radius:14px;padding:22px;margin:34px 0}
+.cta-panel h2{font-size:19px;margin:0 0 6px;letter-spacing:-.3px}
+.cta-panel p{color:var(--muted);font-size:13.5px;margin:0 0 16px}
+.btn{display:inline-block;background:var(--green);color:#082318;padding:11px 16px;border-radius:8px;font:750 13.5px system-ui,sans-serif;margin:0 10px 8px 0}
+.btn:hover{background:#b5ffdb;text-decoration:none}
+.btn.alt{background:#202c3c;color:var(--ink)}.btn.alt:hover{background:#2a3a4e}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:12px}
+footer nav{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:10px}
+.cta-note{color:var(--muted);font-size:12px;margin:10px 0 0}
+@media(max-width:640px){.shell{padding:0 16px}.bar{flex-wrap:wrap;gap:8px;padding-top:12px;padding-bottom:12px}header nav{width:100%;gap:14px}h1{letter-spacing:-1px}table{min-width:560px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#article">Skip to article</a>
+<header class="site"><div class="shell bar"><a class="brand" href="https://pay.mybskm.top/"><b>&#9639;</b> PAYMENTS / MATRIX</a><nav aria-label="Site"><a href="https://pay.mybskm.top/">Live calculator</a><a href="https://pay.mybskm.top/blog/">Research</a><a href="https://proxy.mybskm.top/">Proxy benchmark</a><a href="https://gpu.mybskm.top/">GPU cloud</a></nav></div></header>
+<div class="shell"><p class="backlink"><a href="https://pay.mybskm.top/blog/">&larr; Back to payment economics research</a></p></div>
+<main id="article" class="shell">
+<article>
+<div class="eyebrow">PAYMENT ECONOMICS / BREAK-EVEN TEARDOWN</div>
+<h1>The 5% MoR Illusion: Exact US LLC + Stripe Breakeven for Non-US SaaS Founders (2026)</h1>
+<p class="standfirst">A flat 5% looks cheaper than it is for some founders and more expensive than it is for others. The break-even moves from $3,205 to $5,376 to $15,152 MRR depending on two lines most pricing posts ignore: international card share and settlement currency.</p>
+<p class="meta"><span>By <strong>600me</strong></span><span><time datetime="2026-10-19T06:00:00Z">19 October 2026</time></span><span>2,282 words &middot; ~11 min read</span></p>
+<aside class="ftc"><strong>Affiliate disclosure (FTC).</strong> Some links on this page are affiliate links. If you form a company or buy a service through them, I may earn a commission at no extra cost to you. A commission never changes the price you pay and does not buy a ranking or a recommendation. The numbers below are a transparent planning model with stated assumptions, not a quote, a tax opinion or a promise of savings. Verify current provider pricing, state fees and filing duties before you commit.</aside>
+
+<div class="cta-panel">
+<h2>Skip the spreadsheet: load your own card mix</h2>
+<p>The calculator uses the exact formulas in this article and rewrites the URL as you move the sliders, so the link you share is the scenario you priced.</p>
+<a class="btn" href="https://pay.mybskm.top/?mrr=8000&aov=40&intl=70" rel="noopener">Run the 70% international scenario &nearr;</a><a class="btn alt" href="https://pay.mybskm.top/" rel="noopener">Open the live calculator &nearr;</a>
+<p class="cta-note">Free, no signup, no analytics.</p>
+</div>
+
+<div class="content">
+<p>Picture a founder in Lisbon running a B2B SaaS at <strong>$8,000 MRR</strong> with a <strong>$40 average order value</strong>. She sells to customers in forty countries, prices in US dollars, and pays a Merchant of Record 5% plus 50 cents per order. Her spreadsheet says the MoR costs $500 a month. Stripe's advertised 2.9% plus 30 cents looks like it would cost $292. The gap is $208 a month, or roughly $2,500 a year. She starts planning an escape.</p>
+<p>Then she reads a compliance invoice, discovers that 70% of her cards are issued outside the United States, and notices that Stripe charges extra for exactly the customers she has. The real Stripe cost is not $292. It is $459.33 once fixed fees and a $1,000 annual compliance budget are included. The saving is $488 a year, not $2,500. Still positive, but a different decision. If she also settles in euros or pounds and Stripe converts the payout to dollars, Stripe costs <strong>$539.33</strong> a month and the MoR is <strong>$39.33 cheaper every month</strong>.</p>
+<p>That is the 5% illusion: the headline spread between two percentage rates is not the spread between two businesses. The correct question is not "is 2.9% lower than 5%?" It is "at my card mix, my order size and my compliance bill, how much revenue do I need before the self-managed route actually wins?" That question has an exact answer, and it moves.</p>
+
+<h2>Why the 2.9% versus 5% comparison fails</h2>
+<p>Two numbers are being compared as if they describe the same transaction. They do not.</p>
+<p><strong>First, the MoR rate is all-in for card processing.</strong> Lemon Squeezy and Paddle quote roughly 5% plus 50 cents per transaction on their pay-as-you-go plans. That fee covers the payment, the billing layer and the indirect-tax handling the provider performs as the seller of record. There is no separate compliance budget line, because the provider is the merchant. The trade is real: you pay a premium for someone else to own sales-tax registration, collection and remittance on covered sales.</p>
+<p><strong>Second, Stripe's 2.9% is a domestic-card rate.</strong> Stripe's US pricing adds <strong>1.5%</strong> when the card is issued outside the United States, and <strong>1%</strong> when a charge is made in another currency and converted. Neither surcharge appears in the headline. A globally distributed SaaS does not process domestic cards only. The observed international share is an input to the decision, not a footnote.</p>
+<p><strong>Third, the fixed fees differ.</strong> The MoR charges 50 cents per order; Stripe charges 30 cents. That 20-cent spread favors Stripe per order, but it is dwarfed by a five-figure compliance budget at low order values.</p>
+<p><strong>Fourth, an LLC is not free.</strong> Formation is a one-time cost. Keeping the company alive is annual: state reports or franchise tax, a registered agent, and for a foreign-owned single-member LLC the federal filings that carry a $25,000 penalty when missed. The model treats that as an annual budget <code>C</code>, divided by twelve so it can be compared with monthly processing fees.</p>
+<p>Once those four facts are on the table, the comparison becomes arithmetic instead of vibes.</p>
+
+<h2>The algebra, written out</h2>
+<p>Let <code>R</code> be monthly revenue, <code>A</code> the average order value, <code>N = R / A</code> the number of orders per month, <code>C</code> the annual compliance budget, and <code>r</code> the effective Stripe rate including international and FX surcharges.</p>
+<pre><code>MoR    = 0.05 × R + 0.50 × N
+Stripe = r × R + 0.30 × N + C / 12
+N      = R / A</code></pre>
+<p>Set them equal to find the break-even revenue <code>B</code>:</p>
+<pre><code>0.05B + 0.50(B / A) = rB + 0.30(B / A) + C / 12
+B × [(0.05 − r) + (0.20 / A)] = C / 12
+B = (C / 12) / [(0.05 − r) + (0.20 / A)]</code></pre>
+<p>The bracket is the <strong>rate delta</strong>: the percentage advantage of Stripe over the MoR, plus the fixed-fee advantage per dollar of average order value. If the bracket is zero or negative, Stripe never catches up, no matter how large the revenue. The break-even is not a number; it is a function of three inputs:</p>
+<ul>
+<li><strong>Effective Stripe rate <code>r</code></strong> — 2.9% domestic, 3.95% at 70% international cards, 4.95% with a 1% FX conversion.</li>
+<li><strong>Average order value <code>A</code></strong> — smaller orders make the 20-cent fixed-fee gap matter more.</li>
+<li><strong>Annual compliance budget <code>C</code></strong> — higher overhead pushes the break-even to the right.</li>
+</ul>
+<p>The monthly difference is simply <code>delta = MoR − Stripe</code>. A positive delta means the LLC route is cheaper this month; negative means the MoR is cheaper. Annualize the unrounded monthly difference, never the rounded display value.</p>
+<div class="callout"><strong>The one-line rule:</strong> break-even MRR = monthly compliance cost ÷ [(5% − effective Stripe rate) + $0.20 ÷ AOV]. If the denominator is not positive, there is no break-even.</div>
+
+<h2>Three tiers, three completely different answers</h2>
+<p>The same founder, the same $40 AOV and the same $1,000 annual compliance budget produce three different decisions as the card mix changes.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Tier</th><th>Card mix</th><th>Effective Stripe rate</th><th>Rate delta</th><th>Break-even MRR</th></tr></thead>
+<tbody>
+<tr><td><strong>Tier 1</strong></td><td>100% US domestic cards</td><td class="num">2.90% + $0.30</td><td class="num">2.60%</td><td class="num">$3,205 / mo</td></tr>
+<tr><td><strong>Tier 2</strong></td><td>70% international cards (+1.5%)</td><td class="num">3.95% + $0.30</td><td class="num">1.55%</td><td class="num">$5,376 / mo</td></tr>
+<tr><td><strong>Tier 3</strong></td><td>70% international + 1% FX</td><td class="num">4.95% + $0.30</td><td class="num">0.55%</td><td class="num">$15,152 / mo</td></tr>
+</tbody></table></div>
+<p>The mechanics are worth pausing on. Tier 1's denominator is 2.1% + 0.5% = 2.6%, so $83.33 of monthly overhead divided by 2.6% gives $3,205. Tier 2's denominator is 1.05% + 0.5% = 1.55%, so the same overhead divided by 1.55% gives $5,376. Tier 3's denominator collapses to 0.05% + 0.5% = 0.55%, and the break-even explodes to $15,152. Nothing about the company changed. The customers' card issuers and the settlement currency changed.</p>
+
+<h2>Tier 1: the US-domestic case</h2>
+<p>At $8,000 MRR and a $40 AOV, there are 200 orders. The MoR charges 5% of revenue plus 50 cents per order: $400 + $100 = <strong>$500.00 per month</strong>. Stripe charges 2.9% of revenue, 30 cents per order and one-twelfth of the compliance budget: $232 + $60 + $83.33 = <strong>$375.33 per month</strong>. The LLC route wins by $124.67 a month, or <strong>$1,496 a year</strong>.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>At $8,000 MRR / $40 AOV / $1,000 a year</th><th>MoR (Lemon Squeezy or Paddle)</th><th>US LLC + Stripe</th><th>Difference</th></tr></thead>
+<tbody>
+<tr><td>Revenue fee</td><td class="num">$400.00</td><td class="num">$232.00</td><td class="num">+$168.00</td></tr>
+<tr><td>Per-order fee</td><td class="num">$100.00</td><td class="num">$60.00</td><td class="num">+$40.00</td></tr>
+<tr><td>Compliance budget / 12</td><td class="num">$0.00</td><td class="num">$83.33</td><td class="num">−$83.33</td></tr>
+<tr><td><strong>Monthly total</strong></td><td class="num"><strong>$500.00</strong></td><td class="num"><strong>$375.33</strong></td><td class="num"><strong>+$124.67</strong></td></tr>
+<tr><td><strong>Annual total</strong></td><td class="num"><strong>$6,000.00</strong></td><td class="num"><strong>$4,504.00</strong></td><td class="num"><strong>+$1,496.00</strong></td></tr>
+</tbody></table></div>
+<p>The break-even is $3,205 MRR. Below that, the $1,000 compliance budget cannot be recovered from a 2.6-point rate advantage and a 20-cent order advantage. Above it, every additional dollar of revenue widens the gap. That is the honest version of the "2.9% is cheaper" story: it is cheaper, but only after a revenue threshold, and only for a merchant whose customers pay with US-issued cards.</p>
+
+<h2>Tier 2: the global SaaS default</h2>
+<p>Most non-US SaaS products do not have a 100% domestic card mix. A 70% international share is a realistic planning assumption for a product with customers across Europe, Asia and Latin America. Stripe's effective rate becomes 2.9% + (70% × 1.5%) = <strong>3.95%</strong>.</p>
+<p>At $8,000 MRR the fee decomposition is $316 revenue fee + $60 per-order fee + $83.33 compliance = <strong>$459.33 per month</strong>. The MoR is still $500, so the LLC saves $40.67 a month, or <strong>$488 a year</strong>. The break-even rises to <strong>$5,376 MRR</strong> because the rate delta shrank from 2.6% to 1.55% while overhead stayed the same.</p>
+<p>Scale changes the picture. At $20,000 MRR with the same $40 AOV, there are 500 orders. The MoR charges $1,000 + $250 = <strong>$1,250 per month</strong>. Stripe charges $790 + $150 + $83.33 = <strong>$1,023.33 per month</strong>. The saving is $226.67 a month, or <strong>$2,720 a year</strong>. The compliance overhead is now a rounding error against the revenue spread, which is why the decision flips decisively once a company is past the break-even and stays there.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>70% international cards, $40 AOV, $1,000 a year</th><th>MoR monthly</th><th>Stripe monthly</th><th>Monthly saving</th><th>Annual saving</th></tr></thead>
+<tbody>
+<tr><td>$8,000 MRR (200 orders)</td><td class="num">$500.00</td><td class="num">$459.33</td><td class="num">$40.67</td><td class="num">$488.00</td></tr>
+<tr><td>$20,000 MRR (500 orders)</td><td class="num">$1,250.00</td><td class="num">$1,023.33</td><td class="num">$226.67</td><td class="num">$2,720.00</td></tr>
+</tbody></table></div>
+<p>This is the tier where the "lazy tax" argument becomes credible for a $60k ARR business. At $5,000 MRR the LLC route is only barely ahead; at $8,000 it saves $488 a year; at $20,000 it saves $2,720. Staying on a MoR is not irrational at $5,000 MRR. Staying on it at $20,000 MRR without doing the math is how founders donate thousands of dollars a year to convenience they no longer need.</p>
+
+<h2>Tier 3: the non-USD checkout trap</h2>
+<p>Now add the currency conversion. If the product is priced in euros, pounds or another currency and Stripe converts the charge to US dollars, Stripe's US pricing adds <strong>1%</strong>. The effective rate becomes 4.95%, and the break-even jumps to <strong>$15,152 MRR</strong>.</p>
+<p>At $8,000 MRR the numbers are $396 revenue fee + $60 per-order fee + $83.33 compliance = <strong>$539.33 per month</strong>. The MoR is <strong>$500.00</strong>. The self-managed route is now <strong>$39.33 more expensive every month</strong> — about $472 a year — and the founder who switched early would have paid for the privilege of doing more work.</p>
+<p>This is the most important operational insight in the whole model. The LLC route is not a maturity badge. It is a bet that your effective Stripe rate stays far enough below 5% to repay a fixed compliance bill. A multi-currency product at low MRR can lose that bet even while its headline processing rate looks cheaper. At $20,000 MRR in Tier 3, the math flips again: Stripe costs $990 + $150 + $83.33 = $1,223.33 against the MoR's $1,250, a saving of just $26.67 a month. The company is above break-even but the margin is thin. At $8,000 MRR it is negative.</p>
+<p>There are two honest responses. The first is to stay on the MoR until the revenue is high enough to clear the Tier 3 break-even. The second is to change the input: price and settle in USD, renegotiate the currency conversion, or use a payment setup that does not add the 1% conversion on every charge. The model does not tell you which is possible. It tells you what each choice costs.</p>
+
+<h2>The US LLC bill nobody puts in the headline</h2>
+<p>Formation is the visible cost and the least interesting one. Firstbase lists a <strong>$399</strong> company-formation package; state filing fees and optional add-ons sit on top. That is a one-time expense, and it is not the number that decides the comparison. The recurring bill is.</p>
+<ul>
+<li><strong>State annual report or franchise tax.</strong> Wyoming's annual report carries a modest minimum; Delaware's franchise tax starts around $300 for a small LLC. Neither is zero, and both are due whether or not the company earns anything.</li>
+<li><strong>Registered agent.</strong> Typically $50 to $300 a year. A foreign founder without a US address needs one, and the address is also what keeps service of process and state mail from disappearing.</li>
+<li><strong>IRS Form 5472 and pro forma Form 1120.</strong> A foreign-owned single-member LLC is generally treated as a disregarded entity for income tax but is still a reporting corporation. It must file Form 5472 with a pro forma Form 1120. Missing or late filing can trigger a <strong>$25,000</strong> penalty. This is the compliance red line, not a paperwork preference.</li>
+<li><strong>Bookkeeping and tax preparation.</strong> A US return, a foreign owner's information reporting and a home-country filing do not prepare themselves. Even a lean DIY setup consumes hours that have a market price.</li>
+<li><strong>Banking, mail and sales-tax registrations.</strong> A US business bank account, a mail-forwarding address and any state sales-tax registrations add recurring cost. An LLC does not guarantee Stripe approval, and it does not make sales-tax obligations disappear; it moves them to you.</li>
+</ul>
+<p>The model uses <strong>$1,000 a year</strong> as a planning allowance, which is deliberately lean: it covers a modest state bill, a registered agent and basic 5472 preparation in a good year. A founder with a Delaware LLC, professional bookkeeping and multiple state registrations should raise it. The point is not that $1,000 is the true cost for everyone. The point is that the comparison is sensitive to the number, and the calculator lets you change it.</p>
+<div class="callout"><strong>Do not model the LLC as "Stripe minus 2.1%".</strong> Model it as "Stripe at my effective rate, plus a fixed annual overhead, plus my own time". The break-even formula only works when the overhead is in the equation.</div>
+
+<h2>What to do with this on a Monday morning</h2>
+<ol>
+<li><strong>Measure your international share.</strong> Export a month of charges from Stripe or your MoR and count cards by issuer country. Do not guess. A 70% assumption is a planning default, not a measurement.</li>
+<li><strong>Check your settlement currency.</strong> If you price in USD and receive USD, the FX input is zero. If your checkout charges in local currencies and converts, enable the 1% line and watch the break-even move.</li>
+<li><strong>Price the compliance year honestly.</strong> Add state fees, registered agent, Form 5472 preparation and the hours you will spend. Use that number, not a vendor's formation package price.</li>
+<li><strong>Compute the break-even, then compare it with your actual MRR.</strong> Below it, the MoR is doing useful work. Above it, the annual gap is real money.</li>
+<li><strong>Re-run the model when the mix changes.</strong> A product that shifts from US early adopters to global customers can cross a break-even in the wrong direction. The decision is not permanent.</li>
+</ol>
+<p>The calculator on this site implements the formulas above exactly. The <code>intl</code> slider sets the international card share from 0% to 100% in 5-point steps, the <code>fx</code> switch adds the 1% conversion, and both are written to the URL so a scenario can be shared or bookmarked. The three presets load the three tiers in this article at $8,000 MRR, $40 AOV and $1,000 annual compliance.</p>
+<ul>
+<li><a href="https://pay.mybskm.top/?mrr=8000&aov=40&intl=70">Tier 2 at $8,000 MRR</a> — 70% international cards, no FX: break-even $5,376, saving $488 a year.</li>
+<li><a href="https://pay.mybskm.top/?mrr=20000&aov=40&intl=70">Tier 2 at $20,000 MRR</a> — the same mix at scale: saving $2,720 a year.</li>
+<li><a href="https://pay.mybskm.top/?mrr=8000&aov=40&intl=70&fx=1">Tier 3 at $8,000 MRR</a> — add FX and the MoR becomes $39.33 a month cheaper.</li>
+</ul>
+<p>If the numbers say the LLC route is worth it, the formation step is the next decision, not the first one. Firstbase's $399 package is a reasonable starting point for a foreign founder who wants a US entity without assembling the paperwork alone. Compare the state fee, the registered-agent renewal and the 5472 preparation quote before you pay for anything, and keep the annual compliance budget in the model even after the company exists.</p>
+
+<h2>The decision is a threshold, not an identity</h2>
+<p>The 5% MoR fee is not a scam, and Stripe is not automatically cheaper. Each is a bundle of services with a different cost structure. The MoR bundles processing, billing and indirect-tax handling into a revenue percentage. The LLC route unbundles them: you get a lower variable rate, but you buy compliance, filings and administrative attention separately, and you pay for them whether or not the revenue arrives.</p>
+<p>For a non-US founder, the correct sequence is unglamorous. Measure the card mix. Put the real compliance bill in the model. Compute the break-even. Compare it with the revenue you actually have, not the revenue you hope to have next year. Then choose the cheaper bundle for the next twelve months and revisit when the inputs change.</p>
+<p>At $8,000 MRR with US cards, that exercise says the LLC saves $1,496 a year. At the same revenue with 70% international cards, it says $488. With a non-USD checkout, it says the MoR wins by $39.33 a month. Three different answers from the same headline rates. The only way to know which one is yours is to stop comparing 2.9% with 5% and start comparing the two complete businesses.</p>
+</div>
+<div class="cta-panel">
+<h2>Price your own card mix before you form anything</h2>
+<p>Load the calculator with your MRR, AOV, international share and compliance budget. The URL updates as you move the sliders, so you can send the exact scenario to a co-founder or an accountant.</p>
+<a class="btn" href="https://pay.mybskm.top/?mrr=8000&aov=40&intl=70" rel="noopener">Open the 70% international scenario &nearr;</a><a class="btn alt" href="https://go.272738.xyz/firstbase?src=article_mor_breakeven" rel="sponsored noopener">Form a US LLC with Firstbase ($399) &nearr;</a>
+<p class="cta-note">Affiliate links. Firstbase's $399 package excludes state fees and optional add-ons; see the disclosure above.</p>
+</div>
+</article>
+</main>
+<footer><div class="shell"><nav aria-label="Footer"><a href="https://pay.mybskm.top/">Live payment calculator</a><a href="https://pay.mybskm.top/blog/">Research index</a><a href="https://pay.mybskm.top/blog/mor-vs-us-llc-breakeven.html">MoR vs US LLC breakeven</a><a href="https://proxy.mybskm.top/">Proxy benchmark</a></nav><p><strong>FTC Disclosure:</strong> some links are affiliate links and may earn a commission at no extra cost to you. Planning model with stated assumptions, not financial, tax or legal advice. Verify current pricing and filing duties with each provider and a qualified adviser.</p></div></footer>
+</body>
+</html>

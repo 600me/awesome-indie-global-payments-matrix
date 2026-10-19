@@ -32,8 +32,10 @@
   },
   "featureList": [
     "Merchant of Record versus Stripe fee comparison",
+    "International card share and non-USD FX surcharge modeling",
     "Editable annual LLC compliance budget",
-    "Revenue break-even calculation and shareable estimates"
+    "Revenue break-even calculation and shareable estimates",
+    "Scenario presets for US domestic cards, global SaaS and non-USD checkout"
   ]
 }
 </script>
@@ -41,32 +43,75 @@
 :root{color-scheme:dark;--bg:#0a0a0c;--card:#141418;--line:#303039;--muted:#a6a6b6;--text:#f4f4f8;--cyan:#00f2fe;--amber:#f59e0b;--green:#10b981;--mono:ui-monospace,SFMono-Regular,Consolas,monospace}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--cyan);text-underline-offset:4px}button,input{font:inherit}button,a,input,summary{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--cyan);outline-offset:5px}button{cursor:pointer}main,.nav,footer{max-width:1180px;margin:auto;padding-left:28px;padding-right:28px}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:88px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px;color:var(--text);text-decoration:none;font-size:13px;font-weight:750;letter-spacing:.08em}.mark{display:grid;place-items:center;width:30px;height:30px;color:var(--cyan);border:1px solid #00f2fe66;border-radius:8px;font:18px var(--mono)}.nav small{color:var(--muted);font:11px var(--mono)}.hero{position:relative;padding:65px 0 36px;max-width:850px}.eyebrow{font:11px var(--mono);color:var(--cyan);letter-spacing:.14em;text-transform:uppercase}.eyebrow:before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--cyan);margin-right:10px;box-shadow:0 0 16px #00f2fe88}h1{font-size:clamp(35px,5.8vw,68px);line-height:1.08;letter-spacing:-.055em;margin:22px 0}h1 span{color:var(--cyan)}.hero p{font-size:17px;color:var(--muted);max-width:650px}.hero .intro-example{font:12px/1.8 var(--mono);color:#d1d1da}.workspace{display:grid;grid-template-columns:1fr 1fr;gap:30px;border:1px solid var(--line);background:var(--card);border-radius:16px;padding:28px;margin:12px 0 26px}.control-label{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;font-size:13px;color:#cbcbda}.control-label output{font:600 27px var(--mono);color:var(--text)}input[type=range]{width:100%;margin:10px 0 12px;accent-color:var(--cyan);cursor:pointer;height:24px}.range-ends{display:flex;justify-content:space-between;color:var(--muted);font:11px var(--mono)}.settings{grid-column:1/-1;border-top:1px solid var(--line);padding-top:18px}.settings summary{cursor:pointer;color:var(--muted);font-size:13px}.budget-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:20px 0 8px}.budget-row input{background:var(--bg);color:var(--text);border:1px solid #555563;border-radius:7px;width:145px;padding:10px;font-family:var(--mono)}.settings p{font-size:12px;color:var(--muted);max-width:860px;margin-bottom:0}.settings strong{color:var(--text)}.results-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:30px 0 18px}.results-heading h2{font-size:16px;font-weight:600;margin:0}.results-heading small{color:var(--muted);font:11px var(--mono)}.copy{border:1px solid var(--line);border-radius:7px;background:var(--card);color:var(--text);font-size:12px;padding:10px 14px}.share-row{margin-bottom:16px}.share-row input{display:block;width:100%;background:var(--card);color:var(--text);padding:12px;border:1px solid var(--cyan);border-radius:7px}.share-row label{display:block;font-size:12px;margin-bottom:6px}#copy-status{font-size:12px;color:var(--cyan)}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{display:flex;flex-direction:column;position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;transition:border-color .15s,box-shadow .15s}.card.winner{border-color:var(--green);box-shadow:inset 0 3px var(--green)}.card.mor.winner{border-color:var(--amber);box-shadow:inset 0 3px var(--amber)}.card-type{font:10px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.09em}.card h3{font-size:21px;letter-spacing:-.04em;margin:11px 0 3px}.card .sub{color:var(--muted);font-size:12px;margin:0}.badge{min-height:48px;display:flex;align-items:center;gap:6px;font:10px/1.6 var(--mono);color:var(--muted);padding:10px 0}.winner .badge{color:var(--green)}.mor.winner .badge{color:var(--amber)}.monthly{font:600 clamp(25px,3vw,34px)/1.2 var(--mono);letter-spacing:-.05em;margin:12px 0 6px}.monthly-label{color:var(--muted);font-size:11px}.annual{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:14px 0 18px;font-size:12px}.annual strong{font-family:var(--mono)}dl{margin:17px 0 21px}dl div{display:flex;justify-content:space-between;gap:8px;margin:10px 0;font-size:12px}dt{color:var(--muted)}dd{font-family:var(--mono);margin:0;white-space:nowrap}.card-note{font-size:11px;color:var(--muted);margin:0 0 22px;flex:1}.cta{display:block;text-align:center;border:1px solid #474752;padding:11px 8px;border-radius:7px;color:var(--text);text-decoration:none;font-size:12px;font-weight:650}.winner .cta{background:var(--green);border-color:var(--green);color:#001d13}.mor.winner .cta{background:var(--amber);border-color:var(--amber);color:#261700}.cta:hover{filter:brightness(1.15)}.insight{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;border:1px solid var(--line);border-radius:12px;padding:24px;margin-top:20px;background:linear-gradient(110deg,#10212666,transparent)}.insight h2{font-size:16px;margin:0 0 8px}.insight p{font-size:13px;color:var(--muted);margin:0}.insight strong{color:var(--cyan);font-family:var(--mono)}.breakdown{border-left:1px solid var(--line);padding-left:28px}.breakdown .number{display:block;font:600 26px var(--mono);color:var(--cyan);margin:4px 0}.breakdown small{color:var(--muted);font-size:11px}.section{padding:40px 0 0}.section h2{font-size:23px;letter-spacing:-.04em;margin:0 0 16px}.notes{display:grid;grid-template-columns:1fr 1fr;gap:24px}.note{border-top:1px solid var(--line);padding-top:16px}.note h3{font-size:14px;margin:0 0 8px}.note p{color:var(--muted);font-size:13px;margin:0}.pill{display:inline-block;color:var(--amber);font:10px var(--mono);margin-bottom:8px}.resources{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0}.resources a{border:1px solid var(--line);border-radius:6px;padding:8px 12px;font-size:12px;text-decoration:none}.assumptions{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:10px;padding:18px;margin:28px 0}.assumptions summary{cursor:pointer;color:var(--text)}.assumptions code{font-family:var(--mono);font-size:11px;color:#d1d1da}.assumptions li{margin:8px 0}.assumptions ul{padding-left:20px}footer{margin-top:40px;border-top:1px solid var(--line);padding-top:24px;padding-bottom:32px;color:var(--muted);font-size:11px;display:flex;justify-content:space-between;gap:24px}footer p{margin:0;max-width:680px}.noscript{padding:20px;border:1px solid var(--amber);color:var(--amber)}[hidden]{display:none!important}@media(max-width:900px){.cards{grid-template-columns:1fr}.card{padding:24px}.monthly{font-size:34px}.badge{min-height:36px}.card-note{max-width:650px}.insight{grid-template-columns:1fr}.breakdown{border-left:0;border-top:1px solid var(--line);padding:18px 0 0}}@media(max-width:600px){main,.nav,footer{padding-left:18px;padding-right:18px}.nav{min-height:72px}.nav small{display:none}.hero{padding:40px 0 20px}.hero p{font-size:15px}.workspace{grid-template-columns:1fr;gap:24px;padding:20px}.control-label output{font-size:24px}.notes{grid-template-columns:1fr}.results-heading{align-items:flex-start}.results-heading small{display:block;margin-top:5px}footer{flex-direction:column}.insight{padding:20px}.brand{font-size:11px}}
 </style>
+<style>
+.navlinks{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.brand{white-space:nowrap}
+.navlinks a{color:var(--muted);font-size:12px;text-decoration:none}
+.navlinks a:hover,.navlinks a[aria-current=page]{color:var(--cyan)}
+.advanced{grid-column:1/-1;border-top:1px solid var(--line);padding-top:22px;display:grid;gap:16px}
+.advanced-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.advanced .control-label output{font-size:18px}
+.control-help{font-size:11px;line-height:1.6;color:var(--muted);margin:8px 0 0}
+.switch{display:flex;align-items:center;gap:12px;border:1px solid var(--line);background:#0f0f14;border-radius:10px;padding:14px 16px;cursor:pointer;font-size:13px;color:#cbcbda}
+.switch input{position:absolute;opacity:0;width:1px;height:1px}
+.switch .track{position:relative;flex:0 0 44px;width:44px;height:24px;border-radius:999px;background:#2a2a33;border:1px solid #3a3a45;transition:background .15s}
+.switch .track:before{content:"";position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#9a9aab;transition:transform .15s,background .15s}
+.switch input:checked + .track{background:#0d5c5f;border-color:var(--cyan)}
+.switch input:checked + .track:before{transform:translateX(20px);background:var(--cyan)}
+.switch input:focus-visible + .track{outline:2px solid var(--cyan);outline-offset:3px}
+.presets{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.presets-label{font:11px var(--mono);color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-right:4px}
+.pill-btn{border:1px solid var(--line);background:#17171d;color:#d7d7e2;border-radius:999px;padding:9px 14px;font-size:12px;line-height:1.2;transition:border-color .15s,color .15s,background .15s}
+.pill-btn:hover{border-color:var(--cyan);color:var(--cyan)}
+.pill-btn[aria-pressed=true]{border-color:var(--cyan);color:#04191a;background:var(--cyan);font-weight:700}
+.research-entry .research-links{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+.research-card{display:grid;gap:8px;border:1px solid var(--line);background:var(--card);border-radius:14px;padding:22px;text-decoration:none;color:var(--text)}
+.research-card:hover{border-color:var(--cyan)}
+.research-card strong{font-size:18px;line-height:1.35}
+.research-card span{font-size:12.5px;color:var(--muted);line-height:1.55}
+.research-card .tag{justify-self:start;font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);border:1px solid #00f2fe55;border-radius:999px;padding:3px 8px}
+@media(max-width:760px){.advanced-grid,.research-entry .research-links{grid-template-columns:1fr}.navlinks{gap:12px}.navlinks a{font-size:11px}}
+@media(max-width:600px){.nav{flex-wrap:wrap;gap:10px;padding-top:14px;padding-bottom:14px}.navlinks{order:3;width:100%;gap:14px}}
+</style>
 </head>
 <body>
-<header class="nav"><a class="brand" href="#calculator"><span class="mark" aria-hidden="true">↗</span>GLOBAL PAYMENTS MATRIX</a><small>INDEPENDENT / USD / 2026 EDITION</small></header>
+<header class="nav"><a class="brand" href="#calculator"><span class="mark" aria-hidden="true">↗</span>GLOBAL PAYMENTS MATRIX</a><nav class="navlinks" aria-label="Research and blog"><a href="/blog/">Research blog</a><a href="/blog/mor-vs-us-llc-breakeven.html">MoR vs US LLC breakeven</a></nav><small>INDEPENDENT / USD / 2026 EDITION</small></header>
 <main>
-<section class="hero"><div class="eyebrow">Built for non-US founders</div><h1>Your revenue.<br>Your rules. <span>Your real costs.</span></h1><p>A cheaper transaction fee can hide an expensive company. Compare Merchant of Record simplicity with US LLC + Stripe economics, down to the last fixed fee.</p><p class="intro-example">$8,000 MRR · $40 orders · $1,000 annual compliance<br>US LLC + Stripe saves $1,496/year in the base model.</p></section>
+<section class="hero"><div class="eyebrow">Built for non-US founders</div><h1>Your revenue.<br>Your rules. <span>Your real costs.</span></h1><p>A cheaper transaction fee can hide an expensive company. Compare Merchant of Record simplicity with US LLC + Stripe economics, down to the last fixed fee.</p><p class="intro-example" id="hero-example">$8,000 MRR · $40 orders · $1,000 annual compliance<br>US LLC + Stripe saves $1,496/year in the base model.</p></section>
 <noscript><p class="noscript">Enable JavaScript for live estimates and share links. The base model is 5% + $0.50 per MoR order versus 2.9% + $0.30 per Stripe order, plus $1,000/year for LLC compliance. Read the full matrix in the guide below.</p></noscript>
 <section id="calculator" aria-label="Payment cost calculator">
 <div class="workspace">
 <div><label class="control-label" for="mrr">Monthly revenue (MRR)<output id="mrr-value" for="mrr">$8,000</output></label><input id="mrr" type="range" min="500" max="50000" step="100" value="8000"><div class="range-ends"><span>$500 / month</span><span>$50,000 / month</span></div></div>
 <div><label class="control-label" for="aov">Average order value (AOV)<output id="aov-value" for="aov">$40</output></label><input id="aov" type="range" min="5" max="500" step="5" value="40"><div class="range-ends"><span>$5 / order</span><span>$500 / order</span></div></div>
 <details class="settings"><summary>LLC annual compliance budget · <span id="budget-summary">$1,000/year</span></summary><div class="budget-row"><label for="annual">Annual budget (USD)</label><input id="annual" type="number" min="0" max="100000" step="0.01" value="1000" aria-describedby="budget-help"></div><p id="budget-help">Planning allowance for <strong>Franchise Tax / annual state reports, Registered Agent, and IRS Form 5472 / pro forma 1120 preparation</strong>, where applicable. Default: $1,000/year, or $83.33/month. This is an editable estimate, not a Doola package quote. Formation, income taxes and sales tax/VAT registration, software and filing costs are additional. Add recurring costs to this budget for a fuller comparison.</p></details>
+<div class="advanced">
+<div class="advanced-grid">
+<div><label class="control-label" for="intl"><span>International card share (Intl)</span><output id="intl-value" for="intl">0%</output></label><input id="intl" type="range" min="0" max="100" step="5" value="0" aria-describedby="intl-help"><div class="range-ends"><span>0% · US-issued cards</span><span>100% · non-US issued</span></div><p id="intl-help" class="control-help">Share of volume charged on cards issued outside the US. Stripe adds <strong>+1.5%</strong> for those cards; the model applies the blended share to all revenue.</p></div>
+<div><div class="control-label"><span>Non-USD currency conversion (FX)</span><output id="fx-value" for="fx">Off · +0%</output></div><label class="switch"><input id="fx" type="checkbox" role="switch" aria-describedby="fx-help"><span class="track" aria-hidden="true"></span><span>Add <strong>+1.0%</strong> when checkout settles in a non-USD currency</span></label><p id="fx-help" class="control-help">Off by default so URLs without parameters keep the USD baseline. Enable it when you price in EUR, GBP or another currency and Stripe converts the payout to USD.</p></div>
+</div>
+<div class="presets" role="group" aria-label="Scenario presets">
+<span class="presets-label">Preset scenarios</span>
+<button type="button" class="pill-btn" data-intl="0" data-fx="0" aria-pressed="true" title="Loads $8,000 MRR, $40 AOV and $1,000/year compliance with 0% international cards.">US Domestic Cards (0% Intl)</button>
+<button type="button" class="pill-btn" data-intl="70" data-fx="0" aria-pressed="false" title="Loads $8,000 MRR, $40 AOV and $1,000/year compliance with 70% international cards.">Global SaaS Typical (70% Intl)</button>
+<button type="button" class="pill-btn" data-intl="70" data-fx="1" aria-pressed="false" title="Loads $8,000 MRR, $40 AOV and $1,000/year compliance with 70% international cards plus 1% FX.">Non-USD Checkout (70% Intl + 1% FX)</button>
+</div>
+</div>
 </div>
 <div class="results-heading"><div><h2>Your payment stack, priced honestly.</h2><small><span id="orders">200</span> estimated orders / month · base-rate model</small></div><button class="copy" id="copy-link" type="button">Copy Shareable Link</button></div>
 <p id="copy-status" role="status"></p><div class="share-row" id="share-fallback" hidden><label for="share-url">Copy this shareable link manually:</label><input id="share-url" readonly type="text"></div>
 <div class="cards" aria-live="polite" aria-atomic="true">
 <article class="card mor" id="lemon-card"><div class="card-type">Merchant of Record / 01</div><h3>Lemon Squeezy</h3><p class="sub">Launch lean. Let your MoR handle sales tax.</p><div class="badge" id="lemon-badge">Same base model as Paddle</div><div class="monthly" id="lemon-month">—</div><div class="monthly-label">monthly modeled fees</div><div class="annual"><span>Annualized total</span><strong id="lemon-year">—</strong></div><dl><div><dt>Revenue fee · 5%</dt><dd id="lemon-percent">—</dd></div><div><dt>Per order · $0.50</dt><dd id="lemon-fixed">—</dd></div><div><dt>US LLC overhead in model</dt><dd>$0.00</dd></div></dl><p class="card-note">Sales tax/VAT on MoR sales handled by the provider. Additional international, PayPal, subscription and payout fees may apply. Your own business and income-tax duties remain.</p><a class="cta" href="https://go.272738.xyz/lemonsqueezy" rel="sponsored noopener">Open Lemon Squeezy ↗</a></article>
 <article class="card mor" id="paddle-card"><div class="card-type">Merchant of Record / 02</div><h3>Paddle</h3><p class="sub">Payments, billing and indirect tax together.</p><div class="badge" id="paddle-badge">Same base model as Lemon Squeezy</div><div class="monthly" id="paddle-month">—</div><div class="monthly-label">monthly modeled fees</div><div class="annual"><span>Annualized total</span><strong id="paddle-year">—</strong></div><dl><div><dt>Revenue fee · 5%</dt><dd id="paddle-percent">—</dd></div><div><dt>Per order · $0.50</dt><dd id="paddle-fixed">—</dd></div><div><dt>US LLC overhead in model</dt><dd>$0.00</dd></div></dl><p class="card-note">Published pay-as-you-go checkout pricing. MoR handles sales tax/VAT on covered sales. Product approval, payout thresholds and seller eligibility still apply.</p><a class="cta" href="https://go.272738.xyz/paddle" rel="sponsored noopener">Explore Paddle ↗</a></article>
-<article class="card" id="stripe-card"><div class="card-type">Self-managed / 03</div><h3>US LLC + Stripe</h3><p class="sub">Company formation through Doola.</p><div class="badge" id="stripe-badge">Includes your annual compliance budget</div><div class="monthly" id="stripe-month">—</div><div class="monthly-label">monthly processing + compliance</div><div class="annual"><span>Annualized total</span><strong id="stripe-year">—</strong></div><dl><div><dt>Revenue fee · 2.9%</dt><dd id="stripe-percent">—</dd></div><div><dt>Per order · $0.30</dt><dd id="stripe-fixed">—</dd></div><div><dt>LLC compliance · monthly</dt><dd id="stripe-compliance">—</dd></div></dl><p class="card-note">US domestic-card base rate. You own sales tax/VAT obligations. An LLC does not guarantee Stripe or bank approval. Doola service fees depend on the chosen plan.</p><a class="cta" href="https://go.272738.xyz/doola" rel="sponsored noopener">Get Doola Discount ↗</a></article>
+<article class="card" id="stripe-card"><div class="card-type">Self-managed / 03</div><h3>US LLC + Stripe</h3><p class="sub">Company formation through Firstbase ($399) + Stripe.</p><div class="badge" id="stripe-badge">Includes your annual compliance budget</div><div class="monthly" id="stripe-month">—</div><div class="monthly-label">monthly processing + compliance</div><div class="annual"><span>Annualized total</span><strong id="stripe-year">—</strong></div><dl><div><dt id="stripe-rate-label">Revenue fee · 2.9%</dt><dd id="stripe-percent">—</dd></div><div><dt>Per order · $0.30</dt><dd id="stripe-fixed">—</dd></div><div><dt>LLC compliance · monthly</dt><dd id="stripe-compliance">—</dd></div></dl><p class="card-note">Blended US/non-US card rate, excluding FX unless enabled. You own sales tax/VAT obligations. An LLC does not guarantee Stripe or bank approval. Firstbase's $399 package excludes state fees and optional add-ons.</p><a class="cta" href="https://go.272738.xyz/firstbase?src=pay_calc_winner" rel="sponsored noopener">Launch US LLC with Firstbase ↗</a></article>
 </div>
 <div class="insight" aria-live="polite"><div><h2 id="winner-heading">Calculating your winner…</h2><p id="winner-explanation"></p></div><div class="breakdown"><small>YOUR BREAK-EVEN MONTHLY REVENUE</small><span class="number" id="breakeven">—</span><small id="breakeven-detail"></small></div></div>
 </section>
+<section class="section research-entry" aria-labelledby="research-heading"><h2 id="research-heading">The math behind the 5% illusion.</h2><p style="color:var(--muted);font-size:13px;max-width:760px">A flat 5% looks simple until a 70% international card mix and a 1% FX conversion land on the same invoice. The research note derives the general break-even formula and puts exact numbers on all three tiers at $8,000 MRR.</p><div class="research-links"><a class="research-card" href="/blog/mor-vs-us-llc-breakeven.html"><span class="tag">New research · 2026</span><strong>The 5% MoR Illusion: exact US LLC + Stripe breakeven</strong><span>Break-even moves from $3,205 to $5,376 and then $15,152 MRR as card mix and currency change. Full algebra, compliance bill and $8,000 worked example.</span></a><a class="research-card" href="/blog/"><span class="tag">Research index</span><strong>Payment economics, measured</strong><span>Long-form notes on MoR pricing, US LLC compliance and the true cost of global checkout. Start here to browse every study.</span></a></div></section>
 <section class="section"><h2>Keep your margin. Protect your runway.</h2><div class="notes"><article class="note"><span class="pill">01 / ACCOUNT RISK</span><h3>A fake Stripe account can cost your runway.</h3><p>Borrowed identities and “verified” accounts can fail verification and trigger suspension or reserves. Imagine $10,000 inaccessible for 120 days: that is four months of cash-flow pain. This is a risk scenario, not a universal Stripe hold policy.</p></article><article class="note"><span class="pill">02 / TAX EXPOSURE</span><h3>Global checkout means local obligations.</h3><p>40+ US state tax regimes, customer-location VAT rules and filing deadlines can turn a low headline fee into a compliance bill. A MoR handles indirect tax on its sales; an LLC alone does not. Your obligations depend on nexus, product and customer location.</p></article></div></section>
-<section class="section"><h2>Choose your next move.</h2><p style="color:var(--muted);font-size:13px">Use the modeled winner to compare options. Check eligibility and the final plan price before committing.</p><div class="resources"><a href="https://go.272738.xyz/doola" rel="sponsored noopener">Form with Doola ↗</a><a href="https://go.272738.xyz/firstbase" rel="sponsored noopener">Compare Firstbase ↗</a><a href="https://go.272738.xyz/wise" rel="sponsored noopener">Explore Wise Business ↗</a><a href="../README.md">Read the full decision matrix ↗</a></div><p style="font-size:11px;color:var(--muted)">Wise Business is a business account and FX option; it is not a substitute for a Merchant of Record. Partner links may earn a commission. “Get Doola Discount” opens the partner route; availability and terms are set by Doola.</p></section>
-<details class="assumptions"><summary>Open the math, assumptions &amp; verification notes</summary><ul><li><code>N = MRR / AOV</code>. Fractional orders are expected averages; transaction counts are not rounded before calculation.</li><li><code>MoR = MRR × 0.05 + N × $0.50</code> (each provider separately). <code>Stripe = MRR × 0.029 + N × $0.30 + annual budget / 12</code>.</li><li><code>Net difference = MoR − Stripe</code>. A nonpositive result selects both MoRs; a positive result selects US LLC + Stripe. <code>Break-even MRR = (annual budget / 12) / (0.021 + 0.20 / AOV)</code>. Annual figures use unrounded monthly costs × 12.</li><li>USD baseline assuming stable monthly revenue. No international-card, currency conversion, subscriptions/Billing add-ons, refunds, disputes, payout fees, formation fees, collected sales tax/VAT or income taxes are included. This is not an all-in quote or a profit forecast.</li><li>Lemon Squeezy lists +1.5% international, +1.5% PayPal and +0.5% subscription surcharges. Its fee can apply to tax-inclusive checkout totals. Stripe's 2.9% + $0.30 is a US domestic-card rate. These are materially different products.</li><li>Base pricing checked against provider pages in 2026 (2026-10-16). Doola currently lists Tax and Compliance at $1,999/year plus state fees; the editable $1,000 budget is a planning assumption, not that package. Source links and the full comparison are in the decision matrix.</li><li>Shared links preserve MRR, AOV and a nondefault annual budget. Invalid values are clamped to supported bounds; range values snap to their steps. No cookies, analytics, external libraries or network calls are needed for the calculator.</li></ul></details>
+<section class="section"><h2>Choose your next move.</h2><p style="color:var(--muted);font-size:13px">Use the modeled winner to compare options. Check eligibility and the final plan price before committing.</p><div class="resources"><a href="https://go.272738.xyz/firstbase?src=pay_resources" rel="sponsored noopener">Form US LLC with Firstbase ($399) ↗</a><a href="https://go.272738.xyz/doola" rel="sponsored noopener">Compare Doola ↗</a><a href="https://go.272738.xyz/wise" rel="sponsored noopener">Explore Wise Business ↗</a><a href="/blog/mor-vs-us-llc-breakeven.html">Read the MoR vs US LLC research ↗</a><a href="../README.md">Read the full decision matrix ↗</a></div><p style="font-size:11px;color:var(--muted)">Wise Business is a business account and FX option; it is not a substitute for a Merchant of Record. Firstbase's $399 formation package excludes state fees and optional add-ons. Partner links may earn a commission.</p></section>
+<details class="assumptions"><summary>Open the math, assumptions &amp; verification notes</summary><ul><li><code>N = MRR / AOV</code>. Fractional orders are expected averages; transaction counts are not rounded before calculation.</li><li><code>MoR = MRR × 0.05 + N × $0.50</code> (each provider separately). <code>StripeRate = 2.9% + (Intl / 100) × 1.5% + (FX ? 1% : 0)</code>. <code>Stripe = MRR × StripeRate + N × $0.30 + annual budget / 12</code>.</li><li><code>Net difference = MoR − Stripe</code>. A nonpositive result selects both MoRs; a positive result selects US LLC + Stripe. <code>RateDelta = (5% − StripeRate) + (0.20 / AOV)</code>; <code>Break-even MRR = RateDelta &gt; 0 ? (annual budget / 12) / RateDelta : Infinity</code>. Annual figures use unrounded monthly costs × 12.</li><li>Defaults are <code>intl=0</code> and <code>fx=0</code>, so a URL without those parameters keeps the original US domestic-card baseline. Each preset button reloads <code>$8,000 MRR, $40 AOV, $1,000/year</code> with its card mix: 0% Intl → $3,205/mo break-even; 70% Intl → $5,376/mo; 70% Intl + 1% FX → $15,152/mo. URL parameters <code>intl</code> (0–100, step 5) and <code>fx</code> (0/1) round-trip through the share link.</li><li>USD reporting baseline assuming stable monthly revenue. The model still excludes subscriptions/Billing add-ons, refunds, disputes, payout fees, formation fees, collected sales tax/VAT and income taxes. International card and FX surcharges are modeled only through the two controls above; real processor pricing varies by card country, currency and account agreement.</li><li>Lemon Squeezy lists +1.5% international, +1.5% PayPal and +0.5% subscription surcharges. Its fee can apply to tax-inclusive checkout totals. Stripe's 2.9% + $0.30 is a US domestic-card rate. These are materially different products.</li><li>Base pricing checked against provider pages in 2026 (2026-10-16). Firstbase lists a <strong>$399</strong> company-formation package before state fees and add-ons; the editable $1,000/year budget is a separate compliance planning allowance, not a Firstbase quote. Doola currently lists Tax and Compliance at $1,999/year plus state fees. Source links and the full comparison are in the decision matrix and the <a href="/blog/mor-vs-us-llc-breakeven.html">breakeven research note</a>.</li><li>Shared links preserve MRR, AOV and a nondefault annual budget. Invalid values are clamped to supported bounds; range values snap to their steps. No cookies, analytics, external libraries or network calls are needed for the calculator.</li></ul></details>
 </main>
-<footer><p>Independent comparison tool, not financial advice, verified 2026. Base-rate verification is not a guarantee of eligibility, tax treatment, future pricing or partner discounts.</p><p><a href="https://proxy.mybskm.top">Proxy benchmark</a> · <a href="https://gpu.mybskm.top">GPU benchmark</a> · <a href="https://scrape.mybskm.top">Scraping APIs</a></p>
+<footer><p>Independent comparison tool, not financial advice, verified 2026. Base-rate verification is not a guarantee of eligibility, tax treatment, future pricing or partner discounts.</p><p><a href="/blog/">Research blog</a> · <a href="https://proxy.mybskm.top">Proxy benchmark</a> · <a href="https://gpu.mybskm.top">GPU benchmark</a> · <a href="https://scrape.mybskm.top">Scraping APIs</a></p>
 <nav aria-label="Sister projects"><a href="https://esim.mybskm.top/">eSIM Travel</a></nav>
 </footer>
 <script>
@@ -81,21 +126,29 @@ function normalize(raw, fallback, min, max, step) {
   if (!Number.isFinite(number)) return fallback;
   return Number(Math.min(max, Math.max(min, min + Math.round((number - min) / step) * step)).toFixed(2));
 }
-function calculate(mrr, aov, annual) {
+function pct(rate) {
+  return (Math.round(rate * 10000) / 100).toFixed(2).replace(/\.?0+$/, '') + '%';
+}
+function calculate(mrr, aov, annual, intl, fx) {
   const orders = mrr / aov;
   const morPercent = mrr * 0.05, morFixed = orders * 0.50;
-  const stripePercent = mrr * 0.029, stripeFixed = orders * 0.30, compliance = annual / 12;
+  const stripeRate = 0.029 + (intl / 100) * 0.015 + (fx ? 0.01 : 0);
+  const stripePercent = mrr * stripeRate, stripeFixed = orders * 0.30, compliance = annual / 12;
   const mor = morPercent + morFixed, stripe = stripePercent + stripeFixed + compliance;
-  // Algebraic form avoids cancellation at an exactly equal break-even point.
-  const delta = (12 * mrr * (21 * aov + 200) - annual * 1000 * aov) / (12000 * aov);
-  return {orders, morPercent, morFixed, stripePercent, stripeFixed, compliance, mor, stripe, delta,
-    breakeven: compliance / (0.021 + 0.20 / aov), scaleWinner: delta > 0};
+  const delta = mor - stripe;
+  const rateDelta = (0.05 - stripeRate) + (0.20 / aov);
+  const breakeven = rateDelta > 0 ? (compliance / rateDelta) : Infinity;
+  return {orders, morPercent, morFixed, mor, stripeRate, stripePercent, stripeFixed, compliance, stripe, delta, rateDelta, breakeven,
+    scaleWinner: delta > 0};
 }
 function loadQuery() {
   const query = new URLSearchParams(window.location.search);
   $('mrr').value = normalize(query.get('mrr'), 8000, 500, 50000, 100);
   $('aov').value = normalize(query.get('aov'), 40, 5, 500, 5);
   $('annual').value = normalize(query.get('annual'), 1000, 0, 100000, 0.01);
+  $('intl').value = normalize(query.get('intl'), 0, 0, 100, 5);
+  const fx = (query.get('fx') || '').toLowerCase();
+  $('fx').checked = ['1', 'true', 'on', 'yes'].includes(fx);
   render(false);
 }
 function syncURL() {
@@ -104,15 +157,29 @@ function syncURL() {
   url.searchParams.set('aov', $('aov').value);
   if (Number($('annual').value) === 1000) url.searchParams.delete('annual');
   else url.searchParams.set('annual', $('annual').value);
+  if (Number($('intl').value) === 0) url.searchParams.delete('intl');
+  else url.searchParams.set('intl', $('intl').value);
+  if ($('fx').checked) url.searchParams.set('fx', '1');
+  else url.searchParams.delete('fx');
   history.replaceState(null, '', url);
+}
+function markPreset() {
+  const intl = Number($('intl').value), fx = $('fx').checked ? 1 : 0;
+  document.querySelectorAll('.pill-btn').forEach(button => {
+    button.setAttribute('aria-pressed', String(Number(button.dataset.intl) === intl && Number(button.dataset.fx) === fx));
+  });
 }
 function render(updateURL = true) {
   const mrr = Number($('mrr').value), aov = Number($('aov').value), annual = Number($('annual').value);
-  const result = calculate(mrr, aov, annual);
+  const intl = Number($('intl').value), fx = $('fx').checked;
+  const result = calculate(mrr, aov, annual, intl, fx);
   $('mrr-value').textContent = '$' + whole.format(mrr);
   $('aov-value').textContent = '$' + whole.format(aov);
+  $('intl-value').textContent = intl + '%';
+  $('fx-value').textContent = fx ? 'On · +1.0%' : 'Off · +0%';
   $('mrr').setAttribute('aria-valuetext', usd.format(mrr) + ' per month');
   $('aov').setAttribute('aria-valuetext', usd.format(aov) + ' per order');
+  $('intl').setAttribute('aria-valuetext', intl + '% international cards');
   $('budget-summary').textContent = usd.format(annual) + '/year';
   $('orders').textContent = count.format(result.orders);
   for (const provider of ['lemon', 'paddle']) {
@@ -128,19 +195,33 @@ function render(updateURL = true) {
   $('stripe-percent').textContent = usd.format(result.stripePercent);
   $('stripe-fixed').textContent = usd.format(result.stripeFixed);
   $('stripe-compliance').textContent = usd.format(result.compliance);
+  $('stripe-rate-label').textContent = 'Revenue fee · ' + pct(result.stripeRate) + (intl > 0 || fx ? ' blended' : '');
   $('stripe-card').classList.toggle('winner', result.scaleWinner);
-  $('stripe-badge').textContent = result.scaleWinner ? 'Scale Winner - Saves ' + usd.format(result.delta * 12) + '/yr' : 'Includes your annual compliance budget';
+  $('stripe-badge').textContent = result.scaleWinner
+    ? 'Scale Winner - Saves ' + usd.format(result.delta * 12) + '/yr'
+    : (Math.abs(result.delta) < 0.005 ? 'Tied with MoR base rates' : 'MoR cheaper by ' + usd.format(-result.delta * 12) + '/yr at this mix');
   $('winner-heading').textContent = result.scaleWinner ? 'Your modeled winner: US LLC + Stripe' : 'Your modeled winner: Merchant of Record';
   $('winner-explanation').textContent = result.scaleWinner
-    ? 'Save ' + usd.format(result.delta) + '/month (' + usd.format(result.delta * 12) + '/year) versus either MoR base rate, after your LLC budget. Compare Doola for setup; add any extra tax and operating costs before choosing.'
-    : 'Lemon Squeezy and Paddle tie in this base model. Avoid an extra ' + usd.format(-result.delta) + '/month in modeled self-managed costs and let your MoR handle sales tax/VAT on covered sales. Your own tax duties remain.';
-  $('breakeven').textContent = usd.format(result.breakeven) + ' / mo';
-  $('breakeven-detail').textContent = 'At $' + whole.format(aov) + ' per order and ' + usd.format(annual) + '/year overhead. MoR wins ties; Stripe wins above this revenue.';
+    ? 'Save ' + usd.format(result.delta) + '/month (' + usd.format(result.delta * 12) + '/year) versus either MoR base rate, after your LLC budget and a ' + pct(result.stripeRate) + ' blended Stripe rate. Compare Firstbase for formation; add any extra tax and operating costs before choosing.'
+    : 'Lemon Squeezy and Paddle tie in this base model. At a ' + pct(result.stripeRate) + ' blended Stripe rate, self-managed checkout costs an extra ' + usd.format(-result.delta) + '/month; your MoR handles sales tax/VAT on covered sales. Your own tax duties remain.';
+  $('hero-example').innerHTML = '$' + whole.format(mrr) + ' MRR · $' + whole.format(aov) + ' orders · ' + usd.format(annual) + ' annual compliance · ' + intl + '% intl · FX ' + (fx ? 'on (+1%)' : 'off')
+    + '<br>' + (result.scaleWinner
+      ? 'US LLC + Stripe saves ' + usd.format(result.delta * 12) + '/year at this card mix.'
+      : (Math.abs(result.delta) < 0.005 ? 'US LLC + Stripe and the MoR base model tie at this card mix.' : 'MoR is cheaper by ' + usd.format(-result.delta * 12) + '/year at this card mix.'));
+  if (!Number.isFinite(result.breakeven)) {
+    $('breakeven').textContent = 'No break-even';
+    $('breakeven-detail').textContent = 'At a ' + pct(result.stripeRate) + ' blended Stripe rate and $' + whole.format(aov) + ' AOV, the rate advantage disappears, so Stripe never repays the ' + usd.format(annual) + '/year overhead in this model.';
+  } else {
+    $('breakeven').textContent = '$' + whole.format(Math.round(result.breakeven)) + ' / mo';
+    $('breakeven-detail').textContent = 'At $' + whole.format(aov) + ' per order, ' + usd.format(annual) + '/year overhead and a ' + pct(result.stripeRate) + ' blended Stripe rate. Rounded to the nearest dollar; MoR wins ties, Stripe wins above this revenue.';
+  }
   if (updateURL) syncURL();
+  markPreset();
   $('copy-status').textContent = '';
   $('share-fallback').hidden = true;
 }
-for (const id of ['mrr', 'aov']) $(id).addEventListener('input', () => render());
+for (const id of ['mrr', 'aov', 'intl']) $(id).addEventListener('input', () => render());
+$('fx').addEventListener('change', () => render());
 $('annual').addEventListener('input', () => {
   if ($('annual').value === '' || !$('annual').validity.valid) return;
   render();
@@ -148,6 +229,16 @@ $('annual').addEventListener('input', () => {
 $('annual').addEventListener('change', () => {
   $('annual').value = normalize($('annual').value, 1000, 0, 100000, 0.01);
   render();
+});
+document.querySelectorAll('.pill-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    $('mrr').value = '8000';
+    $('aov').value = '40';
+    $('annual').value = '1000';
+    $('intl').value = button.dataset.intl;
+    $('fx').checked = button.dataset.fx === '1';
+    render();
+  });
 });
 window.addEventListener('popstate', loadQuery);
 $('copy-link').addEventListener('click', async () => {
@@ -157,7 +248,7 @@ $('copy-link').addEventListener('click', async () => {
   try {
     if (!navigator.clipboard || !window.isSecureContext) throw new Error('Clipboard unavailable');
     await navigator.clipboard.writeText(link);
-    $('copy-status').textContent = 'Link copied — revenue, order value and budget included.';
+    $('copy-status').textContent = 'Link copied — revenue, order value, budget, international share and FX included.';
     $('share-fallback').hidden = true;
   } catch (_) {
     $('share-fallback').hidden = false;

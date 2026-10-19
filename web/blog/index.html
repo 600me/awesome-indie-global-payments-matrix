@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Payment Economics Research: MoR vs US LLC, Fees and Break-Even | pay.mybskm.top</title>
+<meta name="description" content="Long-form payment economics research for non-US SaaS founders: Merchant of Record fees, Stripe international card surcharges, FX conversion and the exact US LLC break-even.">
+<link rel="canonical" href="https://pay.mybskm.top/blog/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="600me">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Global Payments Matrix">
+<meta property="og:title" content="Payment Economics Research: MoR vs US LLC, Fees and Break-Even">
+<meta property="og:description" content="Exact break-even math for non-US SaaS founders comparing a 5% Merchant of Record with a US LLC plus Stripe, including international card and FX surcharges.">
+<meta property="og:url" content="https://pay.mybskm.top/blog/">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Payment Economics Research: MoR vs US LLC, Fees and Break-Even">
+<meta name="twitter:description" content="Three card-mix tiers, one exact formula, and the compliance bill most pricing posts leave out.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Payment Economics Research: MoR vs US LLC, Fees and Break-Even",
+  "headline": "Payment Economics Research: MoR vs US LLC, Fees and Break-Even",
+  "url": "https://pay.mybskm.top/blog/",
+  "description": "Long-form payment economics research for non-US SaaS founders: Merchant of Record fees, Stripe international card surcharges, FX conversion and the exact US LLC break-even.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Global Payments Matrix",
+    "url": "https://pay.mybskm.top/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Global Payments Matrix",
+    "url": "https://pay.mybskm.top/"
+  },
+  "inLanguage": "en",
+  "hasPart": [
+    {
+      "@type": "Article",
+      "headline": "The 5% MoR Illusion: Exact US LLC + Stripe Breakeven for Non-US SaaS Founders (2026)",
+      "description": "The break-even moves from $3,205 to $5,376 to $15,152 MRR as international card share and settlement currency change. Full algebra, compliance bill and $8,000 worked example.",
+      "url": "https://pay.mybskm.top/blog/mor-vs-us-llc-breakeven.html",
+      "datePublished": "2026-10-19",
+      "author": {"@type": "Person", "name": "600me"}
+    }
+  ]
+}
+</script>
+<style>
+:root{color-scheme:dark;--bg:#090c12;--panel:#111722;--line:#263142;--ink:#e9eff9;--body:#ccd8e8;--muted:#a0afc2;--green:#88f5bd;--blue:#9bbdff;--amber:#e1c991}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 78% -6%,#12353188,transparent 44%),var(--bg);color:var(--ink);font:16px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}a:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:16px;z-index:20;background:var(--panel);padding:10px 14px;border-radius:8px}
+.shell{max-width:1000px;margin:0 auto;padding:0 26px}
+header.site{border-bottom:1px solid var(--line);background:#090c12e6;position:sticky;top:0;backdrop-filter:blur(8px);z-index:5}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px;max-width:1100px}
+.brand{font:700 15px ui-monospace,monospace;color:var(--ink);white-space:nowrap}.brand b{color:var(--green)}
+header nav,footer nav{display:flex;gap:20px;flex-wrap:wrap}
+header nav a{font-size:12.5px;color:var(--muted)}header nav a:hover{color:var(--green)}
+main{padding:30px 0 60px}
+.eyebrow{font:11.5px ui-monospace,monospace;color:var(--green);letter-spacing:1.8px;text-transform:uppercase;margin:12px 0 0}
+h1{font-size:clamp(32px,5vw,56px);line-height:1.1;letter-spacing:-1.6px;margin:18px 0 14px;max-width:900px}
+.standfirst{font-size:18px;color:var(--muted);max-width:800px;margin:0 0 24px}
+.meta{display:flex;gap:18px;flex-wrap:wrap;font:12px ui-monospace,monospace;color:var(--muted);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;margin:0 0 30px}
+.meta strong{color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 40px}
+.stat{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:16px 18px}
+.stat b{display:block;font:600 24px ui-monospace,monospace;color:var(--green);letter-spacing:-.5px}
+.stat span{font:11.5px ui-monospace,monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.card{display:block;border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:26px;margin:0 0 18px;color:var(--ink)}
+.card:hover{border-color:#3f7d6c;text-decoration:none}
+.card .kicker{font:11px ui-monospace,monospace;color:var(--green);letter-spacing:1.6px;text-transform:uppercase}
+.card h2{font-size:24px;letter-spacing:-.6px;margin:10px 0 8px;line-height:1.25}
+.card p{color:var(--muted);margin:0 0 16px;font-size:14.5px}
+.card .numbers{display:flex;gap:18px;flex-wrap:wrap;font:12px ui-monospace,monospace;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+.card .numbers b{color:var(--green);font-size:15px}
+.cta-panel{border:1px solid #2b5e50;background:linear-gradient(100deg,#102a26,#122030);border-radius:14px;padding:22px;margin:30px 0}
+.cta-panel h2{font-size:19px;margin:0 0 6px;letter-spacing:-.3px}
+.cta-panel p{color:var(--muted);font-size:13.5px;margin:0 0 14px}
+.btn{display:inline-block;background:var(--green);color:#082318;padding:11px 16px;border-radius:8px;font:750 13.5px system-ui,sans-serif;margin:0 10px 8px 0}
+.btn:hover{background:#b5ffdb;text-decoration:none}
+.about{border-top:1px solid var(--line);margin-top:36px;padding-top:24px;color:var(--muted);font-size:13px;max-width:820px}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:12px}
+footer nav{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:10px}
+@media(max-width:640px){.shell{padding:0 16px}.bar{flex-wrap:wrap;gap:8px;padding-top:12px;padding-bottom:12px}header nav{width:100%;gap:14px}.stats{grid-template-columns:1fr}h1{letter-spacing:-1px}.card h2{font-size:21px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#research">Skip to research</a>
+<header class="site"><div class="shell bar"><a class="brand" href="https://pay.mybskm.top/"><b>&#9639;</b> PAYMENTS / RESEARCH</a><nav aria-label="Site"><a href="https://pay.mybskm.top/">Live calculator</a><a href="https://pay.mybskm.top/blog/">Research</a><a href="https://proxy.mybskm.top/">Proxy benchmark</a><a href="https://gpu.mybskm.top/">GPU cloud</a></nav></div></header>
+<main id="research" class="shell">
+<p class="eyebrow">Research index / payment economics</p>
+<h1>The real cost of getting paid, written down.</h1>
+<p class="standfirst">Long-form notes for non-US SaaS founders: Merchant of Record pricing, Stripe's international and FX surcharges, US LLC compliance, and the exact revenue at which one bundle becomes cheaper than the other.</p>
+<p class="meta"><span>By <strong>600me</strong></span><span>Updated <time datetime="2026-10-19">19 October 2026</time></span><span>All numbers reproducible from the live calculator</span></p>
+
+<div class="stats">
+<div class="stat"><b>$3,205</b><span>Break-even MRR · 0% intl</span></div>
+<div class="stat"><b>$5,376</b><span>Break-even MRR · 70% intl</span></div>
+<div class="stat"><b>$15,152</b><span>Break-even MRR · 70% intl + FX</span></div>
+</div>
+
+<a class="card" href="/blog/mor-vs-us-llc-breakeven.html">
+<span class="kicker">New research · 2026</span>
+<h2>The 5% MoR Illusion: Exact US LLC + Stripe Breakeven for Non-US SaaS Founders</h2>
+<p>A flat 5% is not a single decision. This teardown derives the break-even formula, works through three real card mixes at $8,000 MRR and puts the full US LLC compliance bill — including IRS Form 5472 and the $25,000 penalty — next to the processing savings.</p>
+<div class="numbers"><span>Break-even <b>$3,205 / $5,376 / $15,152</b></span><span>Annual saving <b>$1,496 / $488 / −$472</b></span><span>Read time <b>~11 min</b></span></div>
+</a>
+
+<div class="cta-panel">
+<h2>Run your own card mix</h2>
+<p>The live calculator implements the same formulas, with sliders for international card share, an FX switch and three preset scenarios. Every input is written to the URL.</p>
+<a class="btn" href="https://pay.mybskm.top/">Open the payment calculator &nearr;</a><a class="btn" style="background:#202c3c;color:#e9eff9" href="https://pay.mybskm.top/blog/mor-vs-us-llc-breakeven.html">Read the breakeven study &nearr;</a>
+</div>
+
+<div class="about">
+<h2 style="font-size:16px;color:var(--ink);margin:0 0 8px">Method and disclosure</h2>
+<p style="margin:0 0 10px">The model compares a Merchant of Record at 5% + $0.50 per order with Stripe at 2.9% + $0.30, adding 1.5% for international cards, 1% for non-USD conversion and an editable annual US LLC compliance budget divided by twelve. It is a planning estimate, not a quote, a tax opinion or a guarantee of eligibility. Provider pricing, state fees and filing duties change; verify them before committing.</p>
+<p style="margin:0"><strong>FTC disclosure:</strong> some links on this site are affiliate links. If you buy a service through them, this site may earn a commission at no extra cost to you. Commissions do not change the price you pay and do not buy a ranking.</p>
+</div>
+</main>
+<footer><div class="shell"><nav aria-label="Footer"><a href="https://pay.mybskm.top/">Live payment calculator</a><a href="https://pay.mybskm.top/blog/">Research index</a><a href="https://pay.mybskm.top/blog/mor-vs-us-llc-breakeven.html">MoR vs US LLC breakeven</a><a href="https://proxy.mybskm.top/">Proxy benchmark</a><a href="https://gpu.mybskm.top/">GPU cloud</a></nav><p>Independent payment economics research. Planning models with stated assumptions, not financial, tax or legal advice.</p></div></footer>
+</body>
+</html>
